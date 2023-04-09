@@ -29,12 +29,11 @@
         <div class="job-cardA">
           <div class="job-card-text">
             <div class="company_details">
-              <% if Job.all.last.image.attached? %>
+              <% if Job.all.last.image.attached? && Job.all.last.image.present? %>
                 <%= cl_image_tag Job.all.last.image.key, class: "logo" %>
               <% else %>
                 <%= image_tag "logo_placeholder.png", class:"logo", alt:"logo" %>
               <% end %>
-              <%= image_tag "logo_placeholder.png", class:"logo", alt:"logo" %>
               <h6><%= Job.all[-1].company_name %></h6>
             </div>
             <div>
