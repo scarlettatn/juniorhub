@@ -10,17 +10,17 @@ require 'faker'
 require "open-uri"
 
 # clear database
-Comment.destroy_all
-puts "Comments cleared."
-Blog.destroy_all
-puts "Blogs cleared."
-Category.destroy_all
-puts "Categories cleared."
+# Comment.destroy_all
+# puts "Comments cleared."
+# Blog.destroy_all
+# puts "Blogs cleared."
+# Category.destroy_all
+# puts "Categories cleared."
 
-Tag.destroy_all
-puts "Tags cleared."
+# Tag.destroy_all
+# puts "Tags cleared."
 
-puts "Blog features cleared."
+# puts "Blog features cleared."
 
 # JobResponse.destroy_all
 # puts "Job responses cleared."
@@ -62,7 +62,7 @@ end
 # Create 10 users
 10.times do
   User.create!(
-    nickname: Faker::Name.name,
+    nickname: Faker::Name.name[0, 19].truncate(19),
     email: Faker::Internet.email,
     password: Faker::Internet.password,
     admin: false
